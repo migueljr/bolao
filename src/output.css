@@ -608,6 +608,18 @@ video {
   height: 0.5rem;
 }
 
+.h-28 {
+  height: 7rem;
+}
+
+.h-24 {
+  height: 6rem;
+}
+
+.h-10 {
+  height: 2.5rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -706,6 +718,10 @@ video {
 
 .gap-7 {
   gap: 1.75rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
 }
 
 .overflow-x-auto {
