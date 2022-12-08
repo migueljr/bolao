@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css">
   <title>Super Site</title>
   <meta name="description" content="Put your description here.">
 </head>
@@ -47,31 +52,44 @@
                 <div class="whitespace-nowrap py-3 px-2" style="color:#062807;">Depoimentos</div>
             </div>
             <div class="bar2 bg-primary-strong text-white flex gap-4 px-4 py-6 text-xs">
-                <div class="flex w-full justify-between items-start">
-                    <div class=" flex flex-col gap-2">
-                        <div>Concurso 2536 - <span class="text-tertiary font-bold">05/11/2022</span></div>
-                        <div class="flex gap-1">
-                            <div class="bg-primary rounded-full p-1">09</div>
-                            <div class="bg-primary rounded-full p-1">12</div>
-                            <div class="bg-primary rounded-full p-1">22</div>
-                            <div class="bg-primary rounded-full p-1">33</div>
-                            <div class="bg-primary rounded-full p-1">45</div>
-                            <div class="bg-primary rounded-full p-1">59</div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div v-for="i in 3" class="swiper-slide px-5">
+                            <div class="flex w-full justify-center">
+                                <div class="flex justify-between items-start py-5" style="max-width: 375px;min-width: 340px;">
+                                    <div class=" flex flex-col gap-2">
+                                        <div>Concurso 2536 - <span class="text-tertiary font-bold">05/11/2022</span></div>
+                                        <div class="flex gap-1">
+                                            <div class="bg-primary rounded-full p-1">09</div>
+                                            <div class="bg-primary rounded-full p-1">12</div>
+                                            <div class="bg-primary rounded-full p-1">22</div>
+                                            <div class="bg-primary rounded-full p-1">33</div>
+                                            <div class="bg-primary rounded-full p-1">45</div>
+                                            <div class="bg-primary rounded-full p-1">59</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <div class="flex gap-3">
+                                            <div class="font-bold">Sena</div> <span>Acumulou</span>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <div class="font-bold">Quina</div> <span>163 - R$ 28.773,28</span>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <div class="font-bold">Quadra</div> <span>10787 - R$ 621,12</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex flex-col gap-1">
-                        <div class="flex gap-3">
-                            <div class="font-bold">Sena</div> <span>Acumulou</span>
-                        </div>
-                        <div class="flex gap-3">
-                            <div class="font-bold">Quina</div> <span>163 - R$ 28.773,28</span>
-                        </div>
-                        <div class="flex gap-3">
-                            <div class="font-bold">Quadra</div> <span>10787 - R$ 621,12</span>
-                        </div>
-                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
+                
             </div>
+           
         </section>
     </div>
   
@@ -79,6 +97,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.45/vue.global.prod.min.js" integrity="sha512-3CesFAr6COyDB22AiVG2erk2moD1FeL3VMx6UezptTW3qmYdcQhfv6yDGmH4ICNTxd0Rs2AbMQ0Q5lG7J/8n3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
         const { createApp } = Vue
 
@@ -89,7 +108,21 @@
                 }
             },
             mounted(){
-                console.log('fdksfjk')
+                var swiper = new Swiper(".mySwiper", {
+                    cssMode: true,
+                    navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                    },
+                    pagination: {
+                    el: ".swiper-pagination",
+                    },
+                    mousewheel: true,
+                    keyboard: true,
+                });
+
+                document.documentElement.style.setProperty('--swiper-theme-color', '#eee');
+                document.documentElement.style.setProperty('--swiper-navigation-size', '18px');
             }
         }).mount('#app')
     </script>

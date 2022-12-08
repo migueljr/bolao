@@ -44,3 +44,18 @@
 .text-tertiary{
     color: var(--tertiary);
 }
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+.swiper-button-next{
+    right: 0px;
+}
+.swiper-button-prev{
+    left: 0px;
+}
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+    bottom: 0px;
+}
