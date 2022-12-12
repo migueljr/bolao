@@ -59,3 +59,55 @@
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
     bottom: 0px;
 }
+
+.max-width-mobile{
+    max-width: 375px;
+}
+
+.bar-result{
+    max-width: 600px;
+    width: 600px;
+    min-width: 340px;
+}
+
+body{
+    background-color: var(--primary);
+}
+
+.depoimento{
+    width: 100%;
+}
+
+.section-faq{
+    color:#fff;
+}
+
+.resp-faq{
+    color:var(--primary);
+}
+
+@media (max-width: 768px)
+{
+    body{
+        background-color: #ffffff;
+    }
+    .bar-result{
+        max-width: 375px;
+        width: 375px;
+        min-width: 340px;
+    }
+
+    .depoimento{
+        max-width: 375px;
+        min-width: 340px;
+    }
+
+    .section-faq{
+        color: var(--primary);
+    }
+
+    .resp-faq{
+        color:var(--primary);
+    }
+    
+}
